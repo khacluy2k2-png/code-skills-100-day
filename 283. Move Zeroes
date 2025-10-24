@@ -1,0 +1,22 @@
+/**
+ * @param {number[]} nums
+ * @return {void} Do not return anything, modify nums in-place instead.
+ */
+var moveZeroes = function(nums) {
+
+    let pointer=0; // tạo biến temp để trỏ đến các phần tử khác 0
+    if(nums.length>0){
+        for(let i=0; i < num.length; i++){
+            if(nums[i]!=0){
+                nums[pointer] = nums[i];
+                pointer++;
+            }
+        }
+        for(let i = pointer ; i < nums.length ; i++){
+            nums[i] = 0;
+        }
+        return nums;
+    }else{
+        return nums;
+    }
+};
