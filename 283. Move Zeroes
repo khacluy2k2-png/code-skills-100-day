@@ -4,19 +4,19 @@
  */
 var moveZeroes = function(nums) {
 
-    let pointer=0; // tạo biến temp để trỏ đến các phần tử khác 0
-    if(nums.length>0){
-        for(let i=0; i < num.length; i++){
-            if(nums[i]!=0){
-                nums[pointer] = nums[i];
-                pointer++;
+    let pointer = 0; // tạo biến temp để trỏ đến các phần tử khác 0
+    if(nums.length > 0){ // mảng có nhiều hơn 1 phần tử
+        for(let i=0; i < nums.length; i++){ // duyệt mảng
+            if(nums[i] != 0){ // nếu phần tử khác 0 
+                nums[pointer] = nums[i]; // đưa phần tử đó lên đầu mảng 
+                pointer++; // tăng pointer đến khi hết giá trị khác 0
             }
         }
-        for(let i = pointer ; i < nums.length ; i++){
+        for(let i = pointer ; i < nums.length ; i++){ //duyệt tiếp mảng để gán 0 vào các vị trí còn lại của mảng cho đến length
             nums[i] = 0;
         }
         return nums;
-    }else{
+    }else{ //mảng có 1 phần tử duy nhất 
         return nums;
     }
 };
