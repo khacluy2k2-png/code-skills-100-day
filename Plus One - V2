@@ -1,0 +1,21 @@
+/**
+ * @param {number[]} digits
+ * @return {number[]}
+ */
+function plusOne(digits) {
+    function plusOneAtIndex(i) {
+        if (i < 0) {
+            digits.unshift(1); //ghi đè mảng gốc và thêm 1 vào vào đầu mảng 
+            return;
+        }
+        digits[i] += 1; // tăng giá trị của phần tử tại vị trí hiện tại lên 1 đơn vị
+        if (digits[i] < 10) { // trường hợp phần tử + 1 nhưng nhỏ hơn 10 => kết thúc
+            return; 
+        } else {  //trường hợp phần tử + 1 = 10
+            digits[i] = 0; // gán phần tử hiện tại bằng 0
+            plusOneAtIndex(i - 1); // gọi lại hàm truyền vào index tiếp theo
+        }
+    }
+    plusOneAt(digits.length - 1);// truyền vào index của phần tử cuối cùng
+    return digits;
+}
