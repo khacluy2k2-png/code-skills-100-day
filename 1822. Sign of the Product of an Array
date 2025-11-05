@@ -1,0 +1,20 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var arraySign = function(nums) {
+    let tich = 1;
+    for(let i = 0; i < nums.length; i++){
+        if(nums[i] < 0){
+            tich *= -1; 
+        }
+        else if(nums[i] > 0){
+            tich *= 1; 
+        }
+        else{
+            tich = 0;  
+            return tich;      
+            }
+    }
+    return tich;
+};
