@@ -1,0 +1,19 @@
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var isMonotonic = function(nums) {
+    if (nums.length <= 2) //mảng có 2 phần tử thì luôn đúng
+    return true; 
+    let tang = true;
+    let giam = true;
+
+    for (let i = 1; i < nums.length; i++) { //duyệt mảng 
+        if (nums[i] > nums[i - 1]) //so sánh phần tử hiện tại với phần tử phía sau nó nếu chuỗi tăng
+            giam = false;
+        if (nums[i] < nums[i - 1]) //so sánh phần tử hiện tại với phần tử phía sau nó nếu chuỗi giảm
+            tang = false;
+    }
+
+    return tang ? tang : giam; // trả về tăng nếu chuỗi tăng về giảm nếu chuỗi giảm 
+};
